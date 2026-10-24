@@ -88,6 +88,74 @@ struct CloudSyncSettingsTests {
     }
 
     @Test
+    func `progress bar options encode into synced preferences and reapply locally`() throws {
+        let fixture = try self.makeFixture("progress-bar-options")
+        let store = fixture.store
+        store.menuBarProgressGlyphs = .thin
+        store.menuBarProgressWidth = 7
+        store.menuBarProgressCompanion = .time
+        store.menuBarProgressShowsWeekly = false
+
+        let payload = PreferencesSyncPayload(preferences: store.syncedPreferences)
+        let encoded = try CanonicalSyncJSON.encode(payload)
+        let object = try #require(JSONSerialization.jsonObject(with: encoded) as? [String: Any])
+        let preferences = try #require(object["preferences"] as? [String: Any])
+        #expect(preferences["menuBarProgressGlyphs"] as? String == MenuBarProgressGlyphSet.thin.rawValue)
+        #expect(preferences["menuBarProgressWidth"] as? Int == 7)
+        #expect(preferences["menuBarProgressCompanion"] as? String == MenuBarProgressCompanion.time.rawValue)
+        #expect(preferences["menuBarProgressShowsWeekly"] as? Bool == false)
+
+        store.menuBarProgressGlyphs = .blocks
+        store.menuBarProgressWidth = 10
+        store.menuBarProgressCompanion = .percent
+        store.menuBarProgressShowsWeekly = true
+        store.applySyncedPreferences(payload.preferences)
+
+        #expect(store.menuBarProgressGlyphs == .thin)
+        #expect(store.menuBarProgressWidth == 7)
+        #expect(store.menuBarProgressCompanion == .time)
+        #expect(!store.menuBarProgressShowsWeekly)
+    }
+
+    @Test
+    func `legacy synced preferences without progress bar options decode compatibly`() throws {
+        let fixture = try self.makeFixture("legacy-progress-bar-options")
+        let store = fixture.store
+        store.menuBarProgressGlyphs = .squares
+        store.menuBarProgressWidth = 6
+        store.menuBarProgressCompanion = .percentAndTime
+        store.menuBarProgressShowsWeekly = false
+        let payload = PreferencesSyncPayload(preferences: store.syncedPreferences)
+        let encoded = try CanonicalSyncJSON.encode(payload)
+        var object = try #require(JSONSerialization.jsonObject(with: encoded) as? [String: Any])
+        var preferences = try #require(object["preferences"] as? [String: Any])
+        for key in [
+            "menuBarProgressGlyphs",
+            "menuBarProgressWidth",
+            "menuBarProgressCompanion",
+            "menuBarProgressShowsWeekly",
+        ] {
+            preferences.removeValue(forKey: key)
+        }
+        object["preferences"] = preferences
+        let legacyData = try JSONSerialization.data(withJSONObject: object)
+
+        let decoded = try CanonicalSyncJSON.decode(PreferencesSyncPayload.self, from: legacyData)
+
+        #expect(decoded.preferences.menuBarProgressGlyphs == nil)
+        #expect(decoded.preferences.menuBarProgressWidth == nil)
+        #expect(decoded.preferences.menuBarProgressCompanion == nil)
+        #expect(decoded.preferences.menuBarProgressShowsWeekly == nil)
+
+        // An absent key must leave the local value untouched, not reset it.
+        store.applySyncedPreferences(decoded.preferences)
+        #expect(store.menuBarProgressGlyphs == .squares)
+        #expect(store.menuBarProgressWidth == 6)
+        #expect(store.menuBarProgressCompanion == .percentAndTime)
+        #expect(!store.menuBarProgressShowsWeekly)
+    }
+
+    @Test
     func `config watcher suppresses self writes and observes external atomic replacement`() async throws {
         let directory = FileManager.default.temporaryDirectory
             .appendingPathComponent("ConfigFileWatcherTests-\(UUID().uuidString)", isDirectory: true)
