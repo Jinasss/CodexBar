@@ -822,10 +822,12 @@
 "display_mode_pace" = "Tempo";
 "display_mode_both" = "Oba";
 "display_mode_reset_time" = "Godzina resetu";
+"display_mode_progress_bar" = "Pasek postępu";
 "display_mode_percent_desc" = "Pokaż procent pozostałego/wykorzystanego limitu (np. 45%)";
 "display_mode_pace_desc" = "Pokaż wskaźnik tempa (np. +5%)";
 "display_mode_both_desc" = "Pokaż jednocześnie procent i tempo (np. 45% · +5%)";
 "display_mode_reset_time_desc" = "Pokaż godzinę resetu dla wybranej metryki (np. ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Pokazuje paski limitu dla okien sesji i tygodnia (np. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Pokaż czas resetu, gdy limit się wyczerpie";
 "menu_bar_reset_when_exhausted_subtitle" = "Przy 0% pozostałych pokazuje czas do resetu zamiast wartości procentowej";
 
@@ -2754,3 +2756,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Żądanie abliteration.ai nie powiodło się. Spróbuj odświeżyć później.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai zwrócił nierozpoznaną odpowiedź. Zaktualizuj CodexBar i spróbuj ponownie.";
 "Check your API key in Settings." = "Sprawdź klucz API w Ustawieniach.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Pasek postępu";
+"menu_bar_progress_subtitle" = "Paski pokazują pozostały limit sesji 5-godzinnej i okna tygodniowego.";
+"menu_bar_progress_glyphs_title" = "Znaki";
+"menu_bar_progress_glyphs_blocks" = "Bloki";
+"menu_bar_progress_glyphs_circles" = "Kółka";
+"menu_bar_progress_glyphs_squares" = "Kwadraty";
+"menu_bar_progress_glyphs_thin" = "Cienkie";
+"menu_bar_progress_width_title" = "Szerokość paska";
+"menu_bar_progress_width_subtitle" = "Komórki na pas, 4–20.";
+"menu_bar_progress_companion_title" = "Za paskami";
+"menu_bar_progress_companion_none" = "Nic";
+"menu_bar_progress_companion_percent" = "Procent";
+"menu_bar_progress_companion_time" = "Odliczanie do resetu";
+"menu_bar_progress_companion_percent_and_time" = "Procent i odliczanie do resetu";
+"menu_bar_progress_shows_weekly_title" = "Uwzględnij limit tygodniowy";
+"menu_bar_progress_shows_weekly_subtitle" = "Dodaje pas „W” dla okna 7-dniowego.";
+"menu_bar_progress_preview" = "Podgląd";

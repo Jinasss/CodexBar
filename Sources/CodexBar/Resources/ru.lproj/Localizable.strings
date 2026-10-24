@@ -815,10 +815,12 @@
 "display_mode_pace" = "Темп";
 "display_mode_both" = "Оба";
 "display_mode_reset_time" = "Время сброса";
+"display_mode_progress_bar" = "Индикатор выполнения";
 "display_mode_percent_desc" = "Показывать оставшийся или израсходованный процент (например, 45%)";
 "display_mode_pace_desc" = "Показывать индикатор темпа (например, +5%)";
 "display_mode_both_desc" = "Показывать и процент, и темп (например, 45% · +5%)";
 "display_mode_reset_time_desc" = "Показывать время сброса для выбранного показателя (например, ↻ 15:56).";
+"display_mode_progress_bar_desc" = "Показывать квоту полосами для сессионного и недельного окон (например, 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Показывать время сброса, когда квота исчерпана";
 "menu_bar_reset_when_exhausted_subtitle" = "При 0% остатка показывает время до сброса вместо процента";
 
@@ -2752,3 +2754,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Запрос к abliteration.ai не выполнен. Попробуйте обновить позже.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai вернул неизвестный ответ. Обновите CodexBar и повторите попытку.";
 "Check your API key in Settings." = "Проверьте ключ API в настройках.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Индикатор выполнения";
+"menu_bar_progress_subtitle" = "Полосы показывают остаток квоты для 5-часового сеанса и недельного окна.";
+"menu_bar_progress_glyphs_title" = "Символы";
+"menu_bar_progress_glyphs_blocks" = "Блоки";
+"menu_bar_progress_glyphs_circles" = "Круги";
+"menu_bar_progress_glyphs_squares" = "Квадраты";
+"menu_bar_progress_glyphs_thin" = "Тонкие";
+"menu_bar_progress_width_title" = "Ширина полос";
+"menu_bar_progress_width_subtitle" = "Ячеек на полосу, 4–20.";
+"menu_bar_progress_companion_title" = "После полос";
+"menu_bar_progress_companion_none" = "Ничего";
+"menu_bar_progress_companion_percent" = "Процент";
+"menu_bar_progress_companion_time" = "Обратный отсчёт до сброса";
+"menu_bar_progress_companion_percent_and_time" = "Процент и обратный отсчёт до сброса";
+"menu_bar_progress_shows_weekly_title" = "Учитывать недельную квоту";
+"menu_bar_progress_shows_weekly_subtitle" = "Добавляет полосу «W» для окна в 7 дней.";
+"menu_bar_progress_preview" = "Предпросмотр";

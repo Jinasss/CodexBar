@@ -813,10 +813,12 @@
 "display_mode_pace" = "Takt";
 "display_mode_both" = "Båda";
 "display_mode_reset_time" = "Återställningstid";
+"display_mode_progress_bar" = "Förloppsstapel";
 "display_mode_percent_desc" = "Visa återstående/förbrukad procent (t.ex. 45 %)";
 "display_mode_pace_desc" = "Visa taktindikator (t.ex. +5 %)";
 "display_mode_both_desc" = "Visa både procent och takt (t.ex. 45 % · +5 %)";
 "display_mode_reset_time_desc" = "Visa återställningstiden för valt mått (t.ex. ↻ 3:56 PM)";
+"display_mode_progress_bar_desc" = "Visa kvotstaplar för sessions- och veckofönstret (t.ex. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Visa återställningstid när kvoten tar slut";
 "menu_bar_reset_when_exhausted_subtitle" = "Vid 0 % kvar visas tiden till återställning i stället för procenttalet";
 
@@ -2750,3 +2752,22 @@
 "abliteration.ai request failed. Try refreshing later." = "abliteration.ai-förfrågan misslyckades. Försök uppdatera senare.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai returnerade ett okänt svar. Uppdatera CodexBar och försök igen.";
 "Check your API key in Settings." = "Kontrollera din API-nyckel i Inställningar.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Förloppsstapel";
+"menu_bar_progress_subtitle" = "Staplarna visar återstående kvot för femtimmarssessionen och veckofönstret.";
+"menu_bar_progress_glyphs_title" = "Tecken";
+"menu_bar_progress_glyphs_blocks" = "Block";
+"menu_bar_progress_glyphs_circles" = "Cirklar";
+"menu_bar_progress_glyphs_squares" = "Fyrkanter";
+"menu_bar_progress_glyphs_thin" = "Tunna";
+"menu_bar_progress_width_title" = "Stapelbredd";
+"menu_bar_progress_width_subtitle" = "Celler per stapel, 4–20.";
+"menu_bar_progress_companion_title" = "Efter staplarna";
+"menu_bar_progress_companion_none" = "Inget";
+"menu_bar_progress_companion_percent" = "Procent";
+"menu_bar_progress_companion_time" = "Nedräkning till återställning";
+"menu_bar_progress_companion_percent_and_time" = "Procent och nedräkning till återställning";
+"menu_bar_progress_shows_weekly_title" = "Inkludera veckokvot";
+"menu_bar_progress_shows_weekly_subtitle" = "Lägger till en stapel “W” för fönstret på 7 dagar.";
+"menu_bar_progress_preview" = "Förhandsvisning";

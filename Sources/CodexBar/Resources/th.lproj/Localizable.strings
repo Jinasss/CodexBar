@@ -820,10 +820,12 @@
 "display_mode_pace" = "ก้าว";
 "display_mode_both" = "ทั้งสองอย่าง";
 "display_mode_reset_time" = "รีเซ็ตเวลา";
+"display_mode_progress_bar" = "แถบความคืบหน้า";
 "display_mode_percent_desc" = "แสดงเปอร์เซ็นต์ที่เหลือ /used (เช่น 45%)";
 "display_mode_pace_desc" = "แสดงตัวบ่งชี้อัตราการก้าว (เช่น +5%)";
 "display_mode_both_desc" = "แสดงทั้งเปอร์เซ็นต์และความเร็ว (เช่น 45% · +5%)";
 "display_mode_reset_time_desc" = "แสดงเวลารีเซ็ตสําหรับเมตริกที่เลือก (เช่น ↻ 15:56 น.)";
+"display_mode_progress_bar_desc" = "แสดงโควตาเป็นแถบสำหรับกรอบเวลาเซสชันและรายสัปดาห์ (เช่น 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "แสดงเวลารีเซ็ตเมื่อโควตาหมด";
 "menu_bar_reset_when_exhausted_subtitle" = "เมื่อเหลือ 0% จะแสดงเวลาจนถึงการรีเซ็ตแทนเปอร์เซ็นต์";
 
@@ -2753,3 +2755,22 @@
 "abliteration.ai request failed. Try refreshing later." = "คำขอ abliteration.ai ล้มเหลว ลองรีเฟรชอีกครั้งในภายหลัง";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai ส่งการตอบกลับที่ไม่รู้จัก โปรดอัปเดต CodexBar แล้วลองอีกครั้ง";
 "Check your API key in Settings." = "ตรวจสอบคีย์ API ของคุณในการตั้งค่า";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "แถบความคืบหน้า";
+"menu_bar_progress_subtitle" = "แถบจะแสดงโควตาที่เหลือของเซสชัน 5 ชั่วโมงและกรอบเวลารายสัปดาห์";
+"menu_bar_progress_glyphs_title" = "อักขระ";
+"menu_bar_progress_glyphs_blocks" = "บล็อก";
+"menu_bar_progress_glyphs_circles" = "วงกลม";
+"menu_bar_progress_glyphs_squares" = "สี่เหลี่ยม";
+"menu_bar_progress_glyphs_thin" = "บาง";
+"menu_bar_progress_width_title" = "ความกว้างแถบ";
+"menu_bar_progress_width_subtitle" = "ช่องต่อเลน 4–20 ช่อง";
+"menu_bar_progress_companion_title" = "หลังแถบ";
+"menu_bar_progress_companion_none" = "ไม่แสดง";
+"menu_bar_progress_companion_percent" = "เปอร์เซ็นต์";
+"menu_bar_progress_companion_time" = "นับถอยหลังรีเซ็ต";
+"menu_bar_progress_companion_percent_and_time" = "เปอร์เซ็นต์และนับถอยหลังรีเซ็ต";
+"menu_bar_progress_shows_weekly_title" = "รวมโควตารายสัปดาห์";
+"menu_bar_progress_shows_weekly_subtitle" = "เพิ่มเลน “W” สำหรับกรอบเวลา 7 วัน";
+"menu_bar_progress_preview" = "ตัวอย่าง";

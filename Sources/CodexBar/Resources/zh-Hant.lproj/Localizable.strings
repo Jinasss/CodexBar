@@ -803,10 +803,12 @@
 "display_mode_pace" = "進度";
 "display_mode_both" = "兩者";
 "display_mode_reset_time" = "重置時間";
+"display_mode_progress_bar" = "進度條";
 "display_mode_percent_desc" = "顯示剩餘/已使用百分比（例如 45%）";
 "display_mode_pace_desc" = "顯示進度指示器（例如 +5%）";
 "display_mode_both_desc" = "同時顯示百分比和進度（例如 45% · +5%）";
 "display_mode_reset_time_desc" = "顯示所選指標的重置時間（例如 ↻ 3:56 PM）";
+"display_mode_progress_bar_desc" = "以進度條顯示工作階段與每週時段的配額（例如 5h ▓▓░░ · W ▓░░░）";
 "menu_bar_reset_when_exhausted_title" = "配額用盡時顯示重設時間";
 "menu_bar_reset_when_exhausted_subtitle" = "剩餘 0% 時，顯示距重設的時間而非百分比";
 "status_operational" = "運作正常";
@@ -2729,3 +2731,22 @@
 "abliteration.ai request failed. Try refreshing later." = "abliteration.ai 請求失敗。請稍後嘗試重新整理。";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai 傳回了無法辨識的回應。請更新 CodexBar 後再試。";
 "Check your API key in Settings." = "請在設定中檢查你的 API 金鑰。";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "進度條";
+"menu_bar_progress_subtitle" = "進度條顯示 5 小時工作階段與每週時段的剩餘配額。";
+"menu_bar_progress_glyphs_title" = "字元樣式";
+"menu_bar_progress_glyphs_blocks" = "色塊";
+"menu_bar_progress_glyphs_circles" = "圓點";
+"menu_bar_progress_glyphs_squares" = "方框";
+"menu_bar_progress_glyphs_thin" = "細條";
+"menu_bar_progress_width_title" = "進度條寬度";
+"menu_bar_progress_width_subtitle" = "每條車道 4–20 格。";
+"menu_bar_progress_companion_title" = "條後附加內容";
+"menu_bar_progress_companion_none" = "不顯示";
+"menu_bar_progress_companion_percent" = "百分比";
+"menu_bar_progress_companion_time" = "重置倒數計時";
+"menu_bar_progress_companion_percent_and_time" = "百分比與重置倒數計時";
+"menu_bar_progress_shows_weekly_title" = "包含每週配額";
+"menu_bar_progress_shows_weekly_subtitle" = "為 7 天時段新增「W」車道。";
+"menu_bar_progress_preview" = "預覽";

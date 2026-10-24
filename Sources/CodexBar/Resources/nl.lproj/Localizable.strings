@@ -814,10 +814,12 @@
 "display_mode_pace" = "Tempo";
 "display_mode_both" = "Beide";
 "display_mode_reset_time" = "Resettijd";
+"display_mode_progress_bar" = "Voortgangsbalk";
 "display_mode_percent_desc" = "Toon resterend/gebruikt percentage (bijvoorbeeld 45%)";
 "display_mode_pace_desc" = "Toon tempo-indicator (bijv. +5%)";
 "display_mode_both_desc" = "Toon zowel percentage als tempo (bijvoorbeeld 45% · +5%)";
 "display_mode_reset_time_desc" = "Toon de resettijd voor de geselecteerde metriek (bijvoorbeeld ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Toon quotumbalken voor de sessie- en weekvensters (bijvoorbeeld 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Toon resettijd wanneer het quotum op is";
 "menu_bar_reset_when_exhausted_subtitle" = "Bij 0% resterend wordt de tijd tot de reset getoond in plaats van het percentage";
 
@@ -2748,3 +2750,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Het abliteration.ai-verzoek is mislukt. Probeer later opnieuw te vernieuwen.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai heeft een onbekend antwoord teruggegeven. Werk CodexBar bij en probeer het opnieuw.";
 "Check your API key in Settings." = "Controleer je API-sleutel in Instellingen.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Voortgangsbalk";
+"menu_bar_progress_subtitle" = "De balken tonen het resterende quotum voor de 5-uurssessie en het weekvenster.";
+"menu_bar_progress_glyphs_title" = "Tekens";
+"menu_bar_progress_glyphs_blocks" = "Blokken";
+"menu_bar_progress_glyphs_circles" = "Cirkels";
+"menu_bar_progress_glyphs_squares" = "Vierkanten";
+"menu_bar_progress_glyphs_thin" = "Dun";
+"menu_bar_progress_width_title" = "Balkbreedte";
+"menu_bar_progress_width_subtitle" = "Cellen per balk, 4–20.";
+"menu_bar_progress_companion_title" = "Na de balken";
+"menu_bar_progress_companion_none" = "Niets";
+"menu_bar_progress_companion_percent" = "Percentage";
+"menu_bar_progress_companion_time" = "Aftellen tot de reset";
+"menu_bar_progress_companion_percent_and_time" = "Percentage en aftellen tot de reset";
+"menu_bar_progress_shows_weekly_title" = "Wekelijks quotum opnemen";
+"menu_bar_progress_shows_weekly_subtitle" = "Voegt een “W”-balk toe voor het venster van 7 dagen.";
+"menu_bar_progress_preview" = "Voorvertoning";

@@ -822,10 +822,12 @@
 "display_mode_pace" = "Andamento";
 "display_mode_both" = "Entrambi";
 "display_mode_reset_time" = "Ora di reimpostazione";
+"display_mode_progress_bar" = "Barra di avanzamento";
 "display_mode_percent_desc" = "Mostra percentuale residua/consumata (es. 45%)";
 "display_mode_pace_desc" = "Mostra indicatore andamento (es. +5%)";
 "display_mode_both_desc" = "Mostra percentuale e andamento (es. 45% · +5%)";
 "display_mode_reset_time_desc" = "Mostra l'ora di reimpostazione per la metrica selezionata (es. ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Mostra barre di quota per le finestre di sessione e settimanale (es. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Mostra l'ora di ripristino quando la quota si esaurisce";
 "menu_bar_reset_when_exhausted_subtitle" = "Allo 0% rimanente, mostra il tempo al ripristino invece della percentuale";
 
@@ -2755,3 +2757,22 @@
 "abliteration.ai request failed. Try refreshing later." = "La richiesta a abliteration.ai non è riuscita. Riprova ad aggiornare più tardi.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai ha restituito una risposta sconosciuta. Aggiorna CodexBar e riprova.";
 "Check your API key in Settings." = "Controlla la chiave API nelle Impostazioni.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Barra di avanzamento";
+"menu_bar_progress_subtitle" = "Le barre mostrano la quota residua della sessione di 5 ore e della finestra settimanale.";
+"menu_bar_progress_glyphs_title" = "Glifi";
+"menu_bar_progress_glyphs_blocks" = "Blocchi";
+"menu_bar_progress_glyphs_circles" = "Cerchi";
+"menu_bar_progress_glyphs_squares" = "Quadrati";
+"menu_bar_progress_glyphs_thin" = "Sottili";
+"menu_bar_progress_width_title" = "Larghezza delle barre";
+"menu_bar_progress_width_subtitle" = "Celle per barra, 4–20.";
+"menu_bar_progress_companion_title" = "Dopo le barre";
+"menu_bar_progress_companion_none" = "Niente";
+"menu_bar_progress_companion_percent" = "Percentuale";
+"menu_bar_progress_companion_time" = "Conto alla rovescia della reimpostazione";
+"menu_bar_progress_companion_percent_and_time" = "Percentuale e conto alla rovescia della reimpostazione";
+"menu_bar_progress_shows_weekly_title" = "Includi la quota settimanale";
+"menu_bar_progress_shows_weekly_subtitle" = "Aggiunge una barra “W” per la finestra di 7 giorni.";
+"menu_bar_progress_preview" = "Anteprima";

@@ -820,10 +820,12 @@
 "display_mode_pace" = "السرعة";
 "display_mode_both" = "كلاهما";
 "display_mode_reset_time" = "وقت إعادة الضبط";
+"display_mode_progress_bar" = "شريط التقدم";
 "display_mode_percent_desc" = "أظهر النسبة المتبقية /used (مثلا 45%)";
 "display_mode_pace_desc" = "مؤشر السرعة (مثلا +5%)";
 "display_mode_both_desc" = "أظهر كل من النسبة المئوية والسرعة (مثلا 45% · +5%)";
 "display_mode_reset_time_desc" = "عرض وقت إعادة الضبط للمقياس المحدد (مثلا ↻ 3:56 مساء)";
+"display_mode_progress_bar_desc" = "أظهر الحصة كأشرطة لفترات الجلسة والأسبوع (مثلا 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "عرض وقت إعادة التعيين عند نفاد الحصة";
 "menu_bar_reset_when_exhausted_subtitle" = "عند تبقّي 0%، اعرض الوقت حتى إعادة التعيين بدلًا من النسبة المئوية";
 
@@ -2755,3 +2757,22 @@
 "abliteration.ai request failed. Try refreshing later." = "فشل طلب abliteration.ai. حاول التحديث لاحقًا.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "أعاد abliteration.ai استجابة غير معروفة. حدّث CodexBar وحاول مجددًا.";
 "Check your API key in Settings." = "تحقّق من مفتاح API في الإعدادات.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "شريط التقدم";
+"menu_bar_progress_subtitle" = "تعرض الأشرطة الحصة المتبقية لجلسة 5 ساعات وللفترة الأسبوعية.";
+"menu_bar_progress_glyphs_title" = "الرموز";
+"menu_bar_progress_glyphs_blocks" = "كتل";
+"menu_bar_progress_glyphs_circles" = "دوائر";
+"menu_bar_progress_glyphs_squares" = "مربعات";
+"menu_bar_progress_glyphs_thin" = "رفيعة";
+"menu_bar_progress_width_title" = "عرض الأشرطة";
+"menu_bar_progress_width_subtitle" = "خلايا لكل شريط، 4–20.";
+"menu_bar_progress_companion_title" = "بعد الأشرطة";
+"menu_bar_progress_companion_none" = "لا شيء";
+"menu_bar_progress_companion_percent" = "النسبة المئوية";
+"menu_bar_progress_companion_time" = "العد التنازلي لإعادة الضبط";
+"menu_bar_progress_companion_percent_and_time" = "النسبة المئوية والعد التنازلي لإعادة الضبط";
+"menu_bar_progress_shows_weekly_title" = "تضمين الحصة الأسبوعية";
+"menu_bar_progress_shows_weekly_subtitle" = "يضيف شريط «W» للفترة التي تبلغ 7 أيام.";
+"menu_bar_progress_preview" = "معاينة";

@@ -822,10 +822,12 @@
 "display_mode_pace" = "kecepatan";
 "display_mode_both" = "Keduanya";
 "display_mode_reset_time" = "Waktu reset";
+"display_mode_progress_bar" = "Bilah progres";
 "display_mode_percent_desc" = "Tampilkan persentase sisa/terpakai (mis. 45%)";
 "display_mode_pace_desc" = "Tampilkan indikator pace (mis. +5%)";
 "display_mode_both_desc" = "Tampilkan persentase dan pace (mis. 45% · +5%)";
 "display_mode_reset_time_desc" = "Tampilkan waktu reset untuk metrik yang dipilih (mis. ↻ 3:56 PM)";
+"display_mode_progress_bar_desc" = "Tampilkan kuota sebagai bilah untuk jendela sesi dan mingguan (mis. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Tampilkan waktu reset saat kuota habis";
 "menu_bar_reset_when_exhausted_subtitle" = "Saat tersisa 0%, tampilkan waktu hingga reset alih-alih persentase";
 
@@ -2753,3 +2755,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Permintaan abliteration.ai gagal. Coba segarkan lagi nanti.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai mengembalikan respons yang tidak dikenali. Perbarui CodexBar dan coba lagi.";
 "Check your API key in Settings." = "Periksa kunci API Anda di Pengaturan.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Bilah progres";
+"menu_bar_progress_subtitle" = "Bilah menampilkan sisa kuota untuk sesi 5 jam dan jendela mingguan.";
+"menu_bar_progress_glyphs_title" = "Karakter";
+"menu_bar_progress_glyphs_blocks" = "Blok";
+"menu_bar_progress_glyphs_circles" = "Lingkaran";
+"menu_bar_progress_glyphs_squares" = "Persegi";
+"menu_bar_progress_glyphs_thin" = "Tipis";
+"menu_bar_progress_width_title" = "Lebar bilah";
+"menu_bar_progress_width_subtitle" = "Sel per bilah, 4–20.";
+"menu_bar_progress_companion_title" = "Setelah bilah";
+"menu_bar_progress_companion_none" = "Tidak ada";
+"menu_bar_progress_companion_percent" = "Persentase";
+"menu_bar_progress_companion_time" = "Hitung mundur reset";
+"menu_bar_progress_companion_percent_and_time" = "Persentase dan hitung mundur reset";
+"menu_bar_progress_shows_weekly_title" = "Sertakan kuota mingguan";
+"menu_bar_progress_shows_weekly_subtitle" = "Menambahkan bilah “W” untuk jendela 7 hari.";
+"menu_bar_progress_preview" = "Pratinjau";

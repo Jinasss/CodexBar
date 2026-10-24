@@ -810,10 +810,12 @@
 "display_mode_pace" = "Tốc độ";
 "display_mode_both" = "Cả hai";
 "display_mode_reset_time" = "Thời gian đặt lại";
+"display_mode_progress_bar" = "Thanh tiến trình";
 "display_mode_percent_desc" = "Hiển thị phần trăm còn lại/đã sử dụng (ví dụ: 45%)";
 "display_mode_pace_desc" = "Hiển thị chỉ báo tốc độ (ví dụ: +5%)";
 "display_mode_both_desc" = "Hiển thị cả phần trăm và tốc độ (ví dụ: 45% · +5%)";
 "display_mode_reset_time_desc" = "Hiển thị thời gian đặt lại của chỉ số đã chọn (ví dụ: ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Hiển thị hạn mức dạng thanh cho phiên và thời lượng hằng tuần (ví dụ: 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Hiển thị thời gian đặt lại khi hết hạn mức";
 "menu_bar_reset_when_exhausted_subtitle" = "Khi còn 0%, hiển thị thời gian đến lúc đặt lại thay vì phần trăm";
 
@@ -2752,3 +2754,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Yêu cầu abliteration.ai không thành công. Hãy thử làm mới sau.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai trả về phản hồi không nhận dạng được. Hãy cập nhật CodexBar rồi thử lại.";
 "Check your API key in Settings." = "Kiểm tra khóa API trong Cài đặt.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Thanh tiến trình";
+"menu_bar_progress_subtitle" = "Các thanh hiển thị hạn mức còn lại của phiên 5 giờ và của cửa sổ hằng tuần.";
+"menu_bar_progress_glyphs_title" = "Ký tự";
+"menu_bar_progress_glyphs_blocks" = "Khối";
+"menu_bar_progress_glyphs_circles" = "Hình tròn";
+"menu_bar_progress_glyphs_squares" = "Hình vuông";
+"menu_bar_progress_glyphs_thin" = "Mảnh";
+"menu_bar_progress_width_title" = "Độ rộng thanh";
+"menu_bar_progress_width_subtitle" = "Ô trên mỗi thanh, 4–20.";
+"menu_bar_progress_companion_title" = "Sau các thanh";
+"menu_bar_progress_companion_none" = "Không";
+"menu_bar_progress_companion_percent" = "Phần trăm";
+"menu_bar_progress_companion_time" = "Đếm ngược đặt lại";
+"menu_bar_progress_companion_percent_and_time" = "Phần trăm và đếm ngược đặt lại";
+"menu_bar_progress_shows_weekly_title" = "Bao gồm hạn mức hằng tuần";
+"menu_bar_progress_shows_weekly_subtitle" = "Thêm thanh “W” cho cửa sổ 7 ngày.";
+"menu_bar_progress_preview" = "Xem trước";

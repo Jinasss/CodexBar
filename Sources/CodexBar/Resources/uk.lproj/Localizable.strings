@@ -814,10 +814,12 @@
 "display_mode_pace" = "Темп";
 "display_mode_both" = "Обидва";
 "display_mode_reset_time" = "Час скидання";
+"display_mode_progress_bar" = "Індикатор виконання";
 "display_mode_percent_desc" = "Показати залишок/використаний відсоток (наприклад, 45%)";
 "display_mode_pace_desc" = "Показати індикатор темпу (наприклад, +5%)";
 "display_mode_both_desc" = "Показати відсоток і темп (наприклад, 45% · +5%)";
 "display_mode_reset_time_desc" = "Показувати час скидання для вибраного показника (наприклад, ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Показувати квоту смугами для сеансу й тижневого вікна (наприклад, 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Показувати час скидання, коли квоту вичерпано";
 "menu_bar_reset_when_exhausted_subtitle" = "За залишку 0% показує час до скидання замість відсотка";
 
@@ -2752,3 +2754,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Запит до abliteration.ai не виконано. Спробуйте оновити пізніше.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai повернув невідому відповідь. Оновіть CodexBar і спробуйте знову.";
 "Check your API key in Settings." = "Перевірте ключ API в налаштуваннях.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Індикатор виконання";
+"menu_bar_progress_subtitle" = "Смуги показують залишок квоти для 5-годинного сеансу та тижневого вікна.";
+"menu_bar_progress_glyphs_title" = "Символи";
+"menu_bar_progress_glyphs_blocks" = "Блоки";
+"menu_bar_progress_glyphs_circles" = "Кола";
+"menu_bar_progress_glyphs_squares" = "Квадрати";
+"menu_bar_progress_glyphs_thin" = "Тонкі";
+"menu_bar_progress_width_title" = "Ширина смуг";
+"menu_bar_progress_width_subtitle" = "Комірок на смугу, 4–20.";
+"menu_bar_progress_companion_title" = "Після смуг";
+"menu_bar_progress_companion_none" = "Нічого";
+"menu_bar_progress_companion_percent" = "Відсоток";
+"menu_bar_progress_companion_time" = "Зворотний відлік до скидання";
+"menu_bar_progress_companion_percent_and_time" = "Відсоток і зворотний відлік до скидання";
+"menu_bar_progress_shows_weekly_title" = "Ураховувати тижневу квоту";
+"menu_bar_progress_shows_weekly_subtitle" = "Додає смугу «W» для вікна 7 днів.";
+"menu_bar_progress_preview" = "Попередній перегляд";

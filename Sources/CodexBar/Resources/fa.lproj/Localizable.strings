@@ -820,10 +820,12 @@
 "display_mode_pace" = "سرعت";
 "display_mode_both" = "هر دو";
 "display_mode_reset_time" = "زمان بازنشانی";
+"display_mode_progress_bar" = "نوار پیشرفت";
 "display_mode_percent_desc" = "درصد باقی مانده /used را نشان دهید (مثلا 45%)";
 "display_mode_pace_desc" = "نمایش شاخص سرعت (مثلا +5%)";
 "display_mode_both_desc" = "هم درصد و هم سرعت را نشان دهید (مثلا 45% · +5%)";
 "display_mode_reset_time_desc" = "زمان بازنشانی متریک انتخاب شده را نشان دهید (مثلا ↻ ساعت ۳:۵۶ بعدازظهر)";
+"display_mode_progress_bar_desc" = "سهمیه را به صورت نوار برای بازه های جلسه و هفتگی نشان می دهد (مثلا 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "نمایش زمان بازنشانی هنگام اتمام سهمیه";
 "menu_bar_reset_when_exhausted_subtitle" = "در ۰٪ باقی‌مانده، به‌جای درصد، زمان تا بازنشانی نمایش داده می‌شود";
 
@@ -2755,3 +2757,22 @@
 "abliteration.ai request failed. Try refreshing later." = "درخواست abliteration.ai ناموفق بود. بعداً دوباره تازه‌سازی کنید.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai پاسخی ناشناخته برگرداند. CodexBar را به‌روز کنید و دوباره امتحان کنید.";
 "Check your API key in Settings." = "کلید API خود را در تنظیمات بررسی کنید.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "نوار پیشرفت";
+"menu_bar_progress_subtitle" = "نوارها سهمیه باقی مانده جلسه پنج‌ساعته و بازه هفتگی را نشان می دهند.";
+"menu_bar_progress_glyphs_title" = "کاراکترها";
+"menu_bar_progress_glyphs_blocks" = "بلوک‌ها";
+"menu_bar_progress_glyphs_circles" = "دایره‌ها";
+"menu_bar_progress_glyphs_squares" = "مربع‌ها";
+"menu_bar_progress_glyphs_thin" = "نازک";
+"menu_bar_progress_width_title" = "عرض نوارها";
+"menu_bar_progress_width_subtitle" = "به ازای هر نوار 4–20 خانه.";
+"menu_bar_progress_companion_title" = "بعد از نوارها";
+"menu_bar_progress_companion_none" = "هیچ";
+"menu_bar_progress_companion_percent" = "درصد";
+"menu_bar_progress_companion_time" = "شمارش معکوس بازنشانی";
+"menu_bar_progress_companion_percent_and_time" = "درصد و شمارش معکوس بازنشانی";
+"menu_bar_progress_shows_weekly_title" = "گنجاندن سهمیه هفتگی";
+"menu_bar_progress_shows_weekly_subtitle" = "نوار «W» را برای بازه 7 روزه اضافه می کند.";
+"menu_bar_progress_preview" = "پیش‌نمایش";

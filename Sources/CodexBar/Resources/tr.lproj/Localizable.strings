@@ -1309,7 +1309,9 @@
 "Re-login at claude.ai" = "claude.ai'da yeniden oturum aç";
 "Request quota: %@ / %@" = "İstek kotası: %@ / %@";
 "display_mode_reset_time" = "Sıfırlama zamanı";
+"display_mode_progress_bar" = "İlerleme çubuğu";
 "display_mode_reset_time_desc" = "Seçilen metrik için sıfırlama zamanını göster (örn. ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Oturum ve haftalık pencereler için kota çubuklarını göster (örn. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Kota bittiğinde sıfırlama zamanını göster";
 "menu_bar_reset_when_exhausted_subtitle" = "%0 kaldığında yüzde yerine sıfırlamaya kalan süreyi gösterir";
 "terminal_app_title" = "Varsayılan Terminal";
@@ -2754,3 +2756,22 @@
 "abliteration.ai request failed. Try refreshing later." = "abliteration.ai isteği başarısız oldu. Daha sonra yeniden yenileyin.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai tanınmayan bir yanıt döndürdü. CodexBar’ı güncelleyip tekrar deneyin.";
 "Check your API key in Settings." = "Ayarlar’dan API anahtarınızı kontrol edin.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "İlerleme çubuğu";
+"menu_bar_progress_subtitle" = "Çubuklar 5 saatlik oturum ve haftalık pencere için kalan kotasını gösterir.";
+"menu_bar_progress_glyphs_title" = "Karakterler";
+"menu_bar_progress_glyphs_blocks" = "Bloklar";
+"menu_bar_progress_glyphs_circles" = "Daireler";
+"menu_bar_progress_glyphs_squares" = "Kareler";
+"menu_bar_progress_glyphs_thin" = "İnce";
+"menu_bar_progress_width_title" = "Çubuk genişliği";
+"menu_bar_progress_width_subtitle" = "Şerit başına hücre, 4–20.";
+"menu_bar_progress_companion_title" = "Çubuklardan sonra";
+"menu_bar_progress_companion_none" = "Yok";
+"menu_bar_progress_companion_percent" = "Yüzde";
+"menu_bar_progress_companion_time" = "Sıfırlama geri sayımı";
+"menu_bar_progress_companion_percent_and_time" = "Yüzde ve sıfırlama geri sayımı";
+"menu_bar_progress_shows_weekly_title" = "Haftalık kota içer";
+"menu_bar_progress_shows_weekly_subtitle" = "7 günlük pencere için “W” şeridi ekler.";
+"menu_bar_progress_preview" = "Önizleme";

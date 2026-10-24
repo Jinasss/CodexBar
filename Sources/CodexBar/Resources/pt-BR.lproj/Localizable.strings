@@ -811,10 +811,12 @@
 "display_mode_pace" = "Ritmo";
 "display_mode_both" = "Ambos";
 "display_mode_reset_time" = "Tempo de redefinição";
+"display_mode_progress_bar" = "Barra de progresso";
 "display_mode_percent_desc" = "Mostra a porcentagem restante/usada (ex.: 45%)";
 "display_mode_pace_desc" = "Mostra o indicador de ritmo (ex.: +5%)";
 "display_mode_both_desc" = "Mostra porcentagem e ritmo (ex.: 45% · +5%)";
 "display_mode_reset_time_desc" = "Mostra o tempo de redefinição da métrica selecionada (ex.: ↻ 3:56 PM)";
+"display_mode_progress_bar_desc" = "Mostra barras de cota para as janelas de sessão e semanal (ex.: 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Mostrar horário de redefinição quando a cota acabar";
 "menu_bar_reset_when_exhausted_subtitle" = "Com 0% restante, mostra o tempo até a redefinição em vez da porcentagem";
 
@@ -2751,3 +2753,22 @@
 "abliteration.ai request failed. Try refreshing later." = "A solicitação ao abliteration.ai falhou. Tente atualizar mais tarde.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "O abliteration.ai retornou uma resposta desconhecida. Atualize o CodexBar e tente novamente.";
 "Check your API key in Settings." = "Verifique sua chave de API nos Ajustes.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Barra de progresso";
+"menu_bar_progress_subtitle" = "As barras mostram a cota restante da sessão de 5 horas e da janela semanal.";
+"menu_bar_progress_glyphs_title" = "Glifos";
+"menu_bar_progress_glyphs_blocks" = "Blocos";
+"menu_bar_progress_glyphs_circles" = "Círculos";
+"menu_bar_progress_glyphs_squares" = "Quadrados";
+"menu_bar_progress_glyphs_thin" = "Fina";
+"menu_bar_progress_width_title" = "Largura das barras";
+"menu_bar_progress_width_subtitle" = "Células por barra, 4–20.";
+"menu_bar_progress_companion_title" = "Depois das barras";
+"menu_bar_progress_companion_none" = "Nada";
+"menu_bar_progress_companion_percent" = "Porcentagem";
+"menu_bar_progress_companion_time" = "Contagem regressiva de redefinição";
+"menu_bar_progress_companion_percent_and_time" = "Porcentagem e contagem regressiva de redefinição";
+"menu_bar_progress_shows_weekly_title" = "Incluir cota semanal";
+"menu_bar_progress_shows_weekly_subtitle" = "Adiciona uma barra “W” para a janela de 7 dias.";
+"menu_bar_progress_preview" = "Prévia";

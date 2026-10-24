@@ -811,10 +811,12 @@
 "display_mode_pace" = "ペース";
 "display_mode_both" = "両方";
 "display_mode_reset_time" = "リセット時刻";
+"display_mode_progress_bar" = "プログレスバー";
 "display_mode_percent_desc" = "残り/使用済みのパーセンテージを表示（例: 45%）";
 "display_mode_pace_desc" = "ペースインジケータを表示（例: +5%）";
 "display_mode_both_desc" = "パーセンテージとペースの両方を表示（例: 45% · +5%）";
 "display_mode_reset_time_desc" = "選択した指標のリセット時刻を表示（例: ↻ 15:56）";
+"display_mode_progress_bar_desc" = "セッションと週間ウインドウのクォータをバーで表示します（例: 5h ▓▓░░ · W ▓░░░）";
 "menu_bar_reset_when_exhausted_title" = "クォータを使い切ったらリセット時刻を表示";
 "menu_bar_reset_when_exhausted_subtitle" = "残り0%のとき、パーセントの代わりにリセットまでの時間を表示します";
 
@@ -2751,3 +2753,22 @@
 "abliteration.ai request failed. Try refreshing later." = "abliteration.ai へのリクエストに失敗しました。後でもう一度更新してください。";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai から認識できない応答が返されました。CodexBar を更新して、もう一度お試しください。";
 "Check your API key in Settings." = "設定でAPIキーを確認してください。";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "プログレスバー";
+"menu_bar_progress_subtitle" = "バーは 5 時間のセッションと週間ウインドウの残りクォータを表示します。";
+"menu_bar_progress_glyphs_title" = "文字スタイル";
+"menu_bar_progress_glyphs_blocks" = "ブロック";
+"menu_bar_progress_glyphs_circles" = "丸";
+"menu_bar_progress_glyphs_squares" = "四角";
+"menu_bar_progress_glyphs_thin" = "細線";
+"menu_bar_progress_width_title" = "バーの幅";
+"menu_bar_progress_width_subtitle" = "1 レーンあたり 4〜20 文字。";
+"menu_bar_progress_companion_title" = "バーの後ろの表示";
+"menu_bar_progress_companion_none" = "なし";
+"menu_bar_progress_companion_percent" = "パーセント";
+"menu_bar_progress_companion_time" = "リセットカウントダウン";
+"menu_bar_progress_companion_percent_and_time" = "パーセントとリセットカウントダウン";
+"menu_bar_progress_shows_weekly_title" = "週間クォータを含める";
+"menu_bar_progress_shows_weekly_subtitle" = "7 日間ウインドウに「W」レーンを追加します。";
+"menu_bar_progress_preview" = "プレビュー";

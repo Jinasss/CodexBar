@@ -794,10 +794,12 @@
 "display_mode_pace" = "사용 속도";
 "display_mode_both" = "둘 다";
 "display_mode_reset_time" = "재설정 시간";
+"display_mode_progress_bar" = "진행 막대";
 "display_mode_percent_desc" = "남은/사용한 백분율 표시(예: 45%)";
 "display_mode_pace_desc" = "사용 속도 표시기 표시(예: +5%)";
 "display_mode_both_desc" = "백분율과 사용 속도 모두 표시(예: 45% · +5%)";
 "display_mode_reset_time_desc" = "선택한 지표의 재설정 시간 표시(예: ↻ 오후 3:56)";
+"display_mode_progress_bar_desc" = "세션 및 주간 범위의 할당량을 막대로 표시(예: 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "할당량 소진 시 재설정 시간 표시";
 "menu_bar_reset_when_exhausted_subtitle" = "남은 양이 0%일 때 백분율 대신 재설정까지의 시간을 표시합니다";
 "status_operational" = "정상 작동";
@@ -2719,3 +2721,22 @@
 "abliteration.ai request failed. Try refreshing later." = "abliteration.ai 요청에 실패했습니다. 나중에 다시 새로 고침하세요.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai가 알 수 없는 응답을 반환했습니다. CodexBar를 업데이트하고 다시 시도하세요.";
 "Check your API key in Settings." = "설정에서 API 키를 확인하세요.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "진행 막대";
+"menu_bar_progress_subtitle" = "막대는 5시간 세션과 주간 범위의 남은 할당량을 표시합니다.";
+"menu_bar_progress_glyphs_title" = "문자 스타일";
+"menu_bar_progress_glyphs_blocks" = "블록";
+"menu_bar_progress_glyphs_circles" = "원";
+"menu_bar_progress_glyphs_squares" = "사각형";
+"menu_bar_progress_glyphs_thin" = "얇게";
+"menu_bar_progress_width_title" = "막대 너비";
+"menu_bar_progress_width_subtitle" = "레인당 셀 4–20개.";
+"menu_bar_progress_companion_title" = "막대 뒤 표시";
+"menu_bar_progress_companion_none" = "없음";
+"menu_bar_progress_companion_percent" = "백분율";
+"menu_bar_progress_companion_time" = "재설정 카운트다운";
+"menu_bar_progress_companion_percent_and_time" = "백분율 및 재설정 카운트다운";
+"menu_bar_progress_shows_weekly_title" = "주간 할당량 포함";
+"menu_bar_progress_shows_weekly_subtitle" = "7일 범위에 “W” 레인을 추가합니다.";
+"menu_bar_progress_preview" = "미리보기";

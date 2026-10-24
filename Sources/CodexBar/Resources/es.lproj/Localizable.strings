@@ -802,10 +802,12 @@
 "display_mode_pace" = "Ritmo";
 "display_mode_both" = "Ambos";
 "display_mode_reset_time" = "Tiempo de restablecimiento";
+"display_mode_progress_bar" = "Barra de progreso";
 "display_mode_percent_desc" = "Mostrar el porcentaje restante/usado (p. ej. 45 %)";
 "display_mode_pace_desc" = "Mostrar el indicador de ritmo (p. ej. +5 %)";
 "display_mode_both_desc" = "Mostrar porcentaje y ritmo (p. ej. 45 % · +5 %)";
 "display_mode_reset_time_desc" = "Mostrar el tiempo de restablecimiento de la métrica seleccionada (p. ej. ↻ 3:56 PM)";
+"display_mode_progress_bar_desc" = "Mostrar barras de cuota para las ventanas de sesión y semanal (p. ej. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Mostrar la hora de restablecimiento cuando se agote la cuota";
 "menu_bar_reset_when_exhausted_subtitle" = "Con un 0% restante, muestra el tiempo hasta el restablecimiento en lugar del porcentaje";
 
@@ -2749,3 +2751,22 @@
 "abliteration.ai request failed. Try refreshing later." = "La solicitud a abliteration.ai ha fallado. Intenta actualizar más tarde.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai ha devuelto una respuesta desconocida. Actualiza CodexBar e inténtalo de nuevo.";
 "Check your API key in Settings." = "Comprueba tu clave API en Ajustes.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Barra de progreso";
+"menu_bar_progress_subtitle" = "Las barras muestran la cuota restante de la sesión de 5 h y de la ventana semanal.";
+"menu_bar_progress_glyphs_title" = "Glifos";
+"menu_bar_progress_glyphs_blocks" = "Bloques";
+"menu_bar_progress_glyphs_circles" = "Círculos";
+"menu_bar_progress_glyphs_squares" = "Cuadrados";
+"menu_bar_progress_glyphs_thin" = "Finos";
+"menu_bar_progress_width_title" = "Ancho de las barras";
+"menu_bar_progress_width_subtitle" = "Celdas por barra, 4–20.";
+"menu_bar_progress_companion_title" = "Tras las barras";
+"menu_bar_progress_companion_none" = "Nada";
+"menu_bar_progress_companion_percent" = "Porcentaje";
+"menu_bar_progress_companion_time" = "Cuenta atrás de restablecimiento";
+"menu_bar_progress_companion_percent_and_time" = "Porcentaje y cuenta atrás de restablecimiento";
+"menu_bar_progress_shows_weekly_title" = "Incluir la cuota semanal";
+"menu_bar_progress_shows_weekly_subtitle" = "Añade una barra «W» para la ventana de 7 días.";
+"menu_bar_progress_preview" = "Vista previa";

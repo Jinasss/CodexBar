@@ -804,10 +804,12 @@
 "display_mode_pace" = "Pace";
 "display_mode_both" = "Both";
 "display_mode_reset_time" = "Reset time";
+"display_mode_progress_bar" = "Progress bar";
 "display_mode_percent_desc" = "Show remaining/used percentage (e.g. 45%)";
 "display_mode_pace_desc" = "Show pace indicator (e.g. +5%)";
 "display_mode_both_desc" = "Show both percentage and pace (e.g. 45% · +5%)";
 "display_mode_reset_time_desc" = "Show the reset time for the selected metric (e.g. ↻ 3:56 PM)";
+"display_mode_progress_bar_desc" = "Show quota bars for the session and weekly windows (e.g. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Show reset time when quota runs out";
 "menu_bar_reset_when_exhausted_subtitle" = "At 0% remaining, show the time until reset instead of the percentage";
 
@@ -2756,3 +2758,22 @@
 "abliteration.ai request failed. Try refreshing later." = "abliteration.ai request failed. Try refreshing later.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai returned an unrecognized response. Update CodexBar and try again.";
 "Check your API key in Settings." = "Check your API key in Settings.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Progress bar";
+"menu_bar_progress_subtitle" = "Bars show the remaining quota for the 5h session and the weekly window.";
+"menu_bar_progress_glyphs_title" = "Glyphs";
+"menu_bar_progress_glyphs_blocks" = "Blocks";
+"menu_bar_progress_glyphs_circles" = "Circles";
+"menu_bar_progress_glyphs_squares" = "Squares";
+"menu_bar_progress_glyphs_thin" = "Thin";
+"menu_bar_progress_width_title" = "Bar width";
+"menu_bar_progress_width_subtitle" = "Cells per lane, 4–20.";
+"menu_bar_progress_companion_title" = "After the bars";
+"menu_bar_progress_companion_none" = "Nothing";
+"menu_bar_progress_companion_percent" = "Percentage";
+"menu_bar_progress_companion_time" = "Reset countdown";
+"menu_bar_progress_companion_percent_and_time" = "Percentage and reset countdown";
+"menu_bar_progress_shows_weekly_title" = "Include weekly quota";
+"menu_bar_progress_shows_weekly_subtitle" = "Adds a “W” lane for the 7-day window.";
+"menu_bar_progress_preview" = "Preview";

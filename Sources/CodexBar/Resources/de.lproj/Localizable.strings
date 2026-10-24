@@ -814,10 +814,12 @@
 "display_mode_pace" = "Tempo";
 "display_mode_both" = "Beide";
 "display_mode_reset_time" = "Zurücksetzungszeit";
+"display_mode_progress_bar" = "Fortschrittsbalken";
 "display_mode_percent_desc" = "Verbleibenden/verwendeten Prozentsatz anzeigen (z. B. 45 %)";
 "display_mode_pace_desc" = "Tempoanzeige anzeigen (z. B. +5%)";
 "display_mode_both_desc" = "Zeigen Sie sowohl Prozentsatz als auch Tempo an (z. B. 45 % · +5 %)";
 "display_mode_reset_time_desc" = "Zurücksetzungszeit der ausgewählten Metrik anzeigen (z. B. ↻ 15:56)";
+"display_mode_progress_bar_desc" = "Quota-Balken für das Sitzungs- und Wochenfenster anzeigen (z. B. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Zurücksetzungszeit anzeigen, wenn das Kontingent aufgebraucht ist";
 "menu_bar_reset_when_exhausted_subtitle" = "Bei 0 % Rest die Zeit bis zur Zurücksetzung statt des Prozentwerts anzeigen";
 
@@ -2749,3 +2751,22 @@
 "abliteration.ai request failed. Try refreshing later." = "Die Anfrage an abliteration.ai ist fehlgeschlagen. Versuche es später erneut.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai hat eine unbekannte Antwort zurückgegeben. Aktualisiere CodexBar und versuche es erneut.";
 "Check your API key in Settings." = "Prüfe deinen API-Schlüssel in den Einstellungen.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Fortschrittsbalken";
+"menu_bar_progress_subtitle" = "Die Balken zeigen die verbleibende Quote für die 5-Stunden-Sitzung und das Wochenfenster.";
+"menu_bar_progress_glyphs_title" = "Zeichen";
+"menu_bar_progress_glyphs_blocks" = "Blöcke";
+"menu_bar_progress_glyphs_circles" = "Kreise";
+"menu_bar_progress_glyphs_squares" = "Quadrate";
+"menu_bar_progress_glyphs_thin" = "Schmal";
+"menu_bar_progress_width_title" = "Balkenbreite";
+"menu_bar_progress_width_subtitle" = "Zellen pro Spur, 4–20.";
+"menu_bar_progress_companion_title" = "Nach den Balken";
+"menu_bar_progress_companion_none" = "Nichts";
+"menu_bar_progress_companion_percent" = "Prozentwert";
+"menu_bar_progress_companion_time" = "Zurücksetzungs-Countdown";
+"menu_bar_progress_companion_percent_and_time" = "Prozentwert und Zurücksetzungs-Countdown";
+"menu_bar_progress_shows_weekly_title" = "Wochenquote einschließen";
+"menu_bar_progress_shows_weekly_subtitle" = "Fügt eine „W“-Spur für das 7-Tage-Fenster hinzu.";
+"menu_bar_progress_preview" = "Vorschau";

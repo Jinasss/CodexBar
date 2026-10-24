@@ -797,10 +797,12 @@
 "display_mode_pace" = "Ritme";
 "display_mode_both" = "Tots dos";
 "display_mode_reset_time" = "Temps de reinici";
+"display_mode_progress_bar" = "Barra de progrés";
 "display_mode_percent_desc" = "Mostreu el percentatge restant/usat (p. ex. 45%)";
 "display_mode_pace_desc" = "Mostreu l'indicador de ritme (p. ex. +5%)";
 "display_mode_both_desc" = "Mostreu el percentatge i el ritme (p. ex. 45% · +5%)";
 "display_mode_reset_time_desc" = "Mostreu l'hora de reinici de la mètrica seleccionada (p. ex. ↻ 3:56 PM)";
+"display_mode_progress_bar_desc" = "Mostra barres de quota per a les finestres de sessió i setmanal (p. ex. 5h ▓▓░░ · W ▓░░░)";
 "menu_bar_reset_when_exhausted_title" = "Mostra l'hora de restabliment quan s'esgoti la quota";
 "menu_bar_reset_when_exhausted_subtitle" = "Amb un 0% restant, mostra el temps fins al restabliment en lloc del percentatge";
 
@@ -2753,3 +2755,22 @@
 "abliteration.ai request failed. Try refreshing later." = "La sol·licitud a abliteration.ai ha fallat. Torneu a actualitzar més tard.";
 "abliteration.ai returned an unrecognized response. Update CodexBar and try again." = "abliteration.ai ha retornat una resposta desconeguda. Actualitzeu CodexBar i torneu-ho a provar.";
 "Check your API key in Settings." = "Comprova la teva clau API a Configuració.";
+
+/* Menu bar progress bar */
+"menu_bar_progress_title" = "Barra de progrés";
+"menu_bar_progress_subtitle" = "Les barres mostren la quota restant de la sessió de 5 hores i de la finestra setmanal.";
+"menu_bar_progress_glyphs_title" = "Glifs";
+"menu_bar_progress_glyphs_blocks" = "Blocs";
+"menu_bar_progress_glyphs_circles" = "Cercles";
+"menu_bar_progress_glyphs_squares" = "Quadrats";
+"menu_bar_progress_glyphs_thin" = "Fins";
+"menu_bar_progress_width_title" = "Amplada de les barres";
+"menu_bar_progress_width_subtitle" = "Cel·les per barra, 4–20.";
+"menu_bar_progress_companion_title" = "Després de les barres";
+"menu_bar_progress_companion_none" = "Res";
+"menu_bar_progress_companion_percent" = "Percentatge";
+"menu_bar_progress_companion_time" = "Compte enrere del reinici";
+"menu_bar_progress_companion_percent_and_time" = "Percentatge i compte enrere del reinici";
+"menu_bar_progress_shows_weekly_title" = "Inclou la quota setmanal";
+"menu_bar_progress_shows_weekly_subtitle" = "Afegeix una barra «W» per a la finestra de 7 dies.";
+"menu_bar_progress_preview" = "Previsualització";
