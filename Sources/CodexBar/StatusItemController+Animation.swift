@@ -792,7 +792,8 @@ extension StatusItemController {
 
         let pace: UsagePace?
         switch mode {
-        // Progress bars pair the same single display lane with Core-rendered bars, so they carry no pace.
+        // Neither mode carries a pace: percent renders its lane text directly, and progress bars draw
+        // their own session/weekly lanes (see the progress session window below).
         case .percent, .progressBar:
             pace = nil
         case .pace, .both:
@@ -849,10 +850,19 @@ extension StatusItemController {
         }
         // Progress bars render the session lane itself rather than `displayPercentWindow`: the display
         // window is the tie-broken single lane, while progress-bar mode draws both lanes side by side,
-        // so each bar keeps its own window instead of the one lane that won the tie-break. When the
-        // session lane is missing (or no combined lanes exist), fall back to the display window so the
-        // bar keeps rendering instead of collapsing the status item to an icon.
-        let progressSessionWindow: RateWindow? = combinedLanes?.session ?? displayPercentWindow
+        // so each bar keeps its own window instead of the one lane that won the tie-break. With combined
+        // lanes the fallback must stop at the session lane, never reach `displayPercentWindow`: for a
+        // weekly-only account (Codex projections without a session lane, or Claude web's filtered null
+        // `five_hour` placeholder) the tie-break IS the weekly lane, and passing it as the session window
+        // would draw the same weekly quota twice — once mislabeled by the session formatter ("168h") and
+        // once as the "W" lane. Core promotes a missing session lane to the enabled weekly lane itself
+        // ("W ▓▓… · 20%", matching percent mode). With the weekly lane disabled there is simply no lane
+        // left to draw, so the status item keeps its icon without a fake session bar.
+        let progressSessionWindow: RateWindow? = if let combinedLanes {
+            combinedLanes.session
+        } else {
+            displayPercentWindow
+        }
         // Bar shape comes from settings and only applies in progress-bar mode; quota semantics
         // (showUsed, the weekly lane) stay with the displayText parameters below.
         let progressOptions: MenuBarProgressTextOptions? = if mode == .progressBar {
@@ -1061,8 +1071,9 @@ extension StatusItemController {
     /// Reset dates for every lane whose menu-bar text is currently rendered as a reset time, so the
     /// countdown scheduler can refresh each of them. Reset-time mode drives a single window. The smart
     /// "reset time when exhausted" option can surface BOTH combined session/weekly lanes in percent mode,
-    /// while pace/both/progress-bar render the one lane chosen by `combinedDisplayPercentWindow` — mirror
-    /// that presentation here rather than scheduling whichever lane happened to drive the icon.
+    /// while pace/both render the one lane chosen by `combinedDisplayPercentWindow`; progress bars key
+    /// their reset text off the session-first primary lane and keep it live even before exhaustion —
+    /// mirror that presentation here rather than scheduling whichever lane happened to drive the icon.
     func menuBarDisplayedResetDates(for provider: UsageProvider, now: Date) -> [Date] {
         let snapshot = self.menuBarUsageSource(for: provider).snapshot
         let layoutResolution = self.renderedMenuBarLayoutResolution(for: provider)
@@ -1079,9 +1090,27 @@ extension StatusItemController {
                 surface: .menuBar,
                 snapshotOverride: snapshot,
                 now: now)
-        if let lanes = self.combinedSessionWeeklyLanes(
-            for: provider, snapshot: snapshot, projection: projection),
-            lanes.session != nil || lanes.weekly != nil
+        let combinedLanes = self.combinedSessionWeeklyLanes(
+            for: provider, snapshot: snapshot, projection: projection)
+
+        if mode == .progressBar {
+            // Bars render the reset text while quota remains (the ↻ companion), so they schedule the
+            // primary lane's reset whenever it is still future — not only once the lane is exhausted like
+            // percent/pace/both. The primary lane is the exact one the renderer and the display-level
+            // smart reset read: the session lane, else the enabled weekly lane (a weekly-only account
+            // promotes it inside `MenuBarProgressText.text`), else the metric window for providers
+            // without the combined metric. A primary lane whose reset already elapsed renders nothing
+            // that ticks — the exhausted smart reset falls back to a static percentage — so it must not
+            // be scheduled.
+            let weekly = self.settings.menuBarProgressShowsWeekly ? combinedLanes?.weekly : nil
+            let primary = combinedLanes?.session ?? weekly
+                ?? self.menuBarMetricWindow(for: provider, snapshot: snapshot, now: now)
+            guard let primary, let resetsAt = primary.resetsAt, resetsAt > now else { return [] }
+            return [resetsAt]
+        }
+
+        if let lanes = combinedLanes,
+           lanes.session != nil || lanes.weekly != nil
         {
             switch mode {
             case .percent:
@@ -1090,16 +1119,16 @@ extension StatusItemController {
                     .compactMap(\.self)
                     .filter { $0.remainingPercent <= 0 }
                     .compactMap(\.resetsAt)
-            case .pace, .both, .progressBar:
-                // Pace/both render one usage lane alongside the weekly pace, and progress bars render that
-                // same single lane. Use that exact lane rather than `menuBarMetricWindow`, whose
-                // tie-breaking can select the other exhausted window.
+            case .pace, .both:
+                // Pace/both render one usage lane alongside the weekly pace. Use that exact lane rather
+                // than `menuBarMetricWindow`, whose tie-breaking can select the other exhausted window.
                 let window = Self.combinedDisplayPercentWindow(
                     lanes: lanes,
                     fallback: self.menuBarMetricWindow(for: provider, snapshot: snapshot, now: now))
                 guard let window, window.remainingPercent <= 0 else { return [] }
                 return window.resetsAt.map { [$0] } ?? []
-            case .resetTime:
+            case .resetTime, .progressBar:
+                // Progress bars are handled above; reset-time mode keeps the window regardless of quota.
                 break
             }
         }

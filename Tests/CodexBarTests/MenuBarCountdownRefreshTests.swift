@@ -470,7 +470,7 @@ struct MenuBarCountdownRefreshTests {
         #expect(!controller._test_isMenuBarCountdownRefreshScheduled())
     }
 
-    @Test(arguments: [MenuBarDisplayMode.percent, .pace, .both])
+    @Test(arguments: [MenuBarDisplayMode.percent, .pace, .both, .progressBar])
     func `combined metric schedules every displayed exhausted reset lane`(mode: MenuBarDisplayMode) {
         for usesAbsoluteClock in [false, true] {
             // Isolated defaults: enabling the smart option must not leak into `.standard`.
@@ -529,19 +529,25 @@ struct MenuBarCountdownRefreshTests {
             case .percent:
                 // Percent displays both lane values independently.
                 #expect(dates == [sessionReset, weeklyReset])
+                // The future weekly boundary stays scheduled for countdown and absolute-clock styles even
+                // though the session lane elapsed.
+                #expect(controller._test_isMenuBarCountdownRefreshScheduled())
             case .pace, .both:
                 // Pace/both surface the exhausted weekly lane, not the session lane that wins the 100/100
                 // icon-metric tie.
                 #expect(dates == [weeklyReset])
+                #expect(controller._test_isMenuBarCountdownRefreshScheduled())
             case .progressBar:
-                // Progress bars render the same single display lane as pace/both.
-                #expect(dates == [weeklyReset])
+                // Progress bars key their reset text off the session-first primary lane, which here is the
+                // session lane whose reset already elapsed. Nothing displayed ticks: the display-level
+                // smart reset cannot use the elapsed reset, so it falls back to a static "0%" and the bar
+                // renderer never runs, and the future weekly reset is rendered nowhere. Scheduling
+                // nothing is therefore correct — unlike pace/both, the weekly lane is not on screen.
+                #expect(dates.isEmpty)
+                #expect(!controller._test_isMenuBarCountdownRefreshScheduled())
             case .resetTime:
                 Issue.record("reset-time mode is not an argument for this smart-reset test")
             }
-            // The future weekly boundary stays scheduled for countdown and absolute-clock styles even
-            // though the session lane elapsed.
-            #expect(controller._test_isMenuBarCountdownRefreshScheduled())
             controller.releaseStatusItemsForTesting()
         }
     }

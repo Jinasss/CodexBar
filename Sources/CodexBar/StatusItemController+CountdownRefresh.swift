@@ -11,6 +11,12 @@ extension StatusItemController {
         var delays: [TimeInterval] = []
         let providers = self.menuBarRefreshProviders()
         let displayMode = self.settings.menuBarDisplayMode
+        // Progress bars render the live "↻" reset companion even while quota remains, so they need the
+        // same minute-level scheduling reset-time mode gets rather than waiting for an unrelated refresh.
+        // `MenuBarProgressCompanion.showsTime` is internal to CodexBarCore, so the eligibility mirrors it.
+        let companion = self.settings.menuBarProgressCompanion
+        let progressBarShowsResetTime = displayMode == .progressBar
+            && (companion == .time || companion == .percentAndTime)
         let smartExhaustedActive = self.settings.menuBarShowsBrandIconWithPercent
             && self.settings.menuBarShowsResetTimeWhenExhausted
             && displayMode != .resetTime
@@ -36,7 +42,7 @@ extension StatusItemController {
             }
 
             guard self.settings.menuBarShowsBrandIconWithPercent,
-                  displayMode == .resetTime || smartExhaustedActive
+                  displayMode == .resetTime || progressBarShowsResetTime || smartExhaustedActive
             else { continue }
             let resetDates = self.menuBarDisplayedResetDates(for: provider, now: now)
             switch self.settings.resetTimeDisplayStyle {

@@ -41,14 +41,30 @@ struct MenuBarPane: View {
         }
     }
 
-    /// Fixed preview lanes: a 5h session at 74% remaining and a 7d weekly lane at 20% remaining.
+    /// Fixed preview clock: the fixtures and the Core render below share one instant so the preview is
+    /// stable instead of drifting toward a past reset as real time passes.
+    private static let progressPreviewNow = Date(timeIntervalSince1970: 1_800_000_000)
+
+    /// Fixed preview lanes: a 5h session at 74% remaining with a reset 3h 12m ahead (so the time
+    /// companion shows "↻ 3h 12m") and a 7d weekly lane at 20% remaining.
     private static let progressPreviewSession = RateWindow(
-        usedPercent: 26, windowMinutes: 300, resetsAt: nil, resetDescription: nil)
+        usedPercent: 26,
+        windowMinutes: 300,
+        resetsAt: Self.progressPreviewNow.addingTimeInterval(3 * 3600 + 12 * 60),
+        resetDescription: nil)
     private static let progressPreviewWeekly = RateWindow(
         usedPercent: 80, windowMinutes: 10080, resetsAt: nil, resetDescription: nil)
 
     /// Stepper range mirrors the write-side clamp in `SettingsStore.menuBarProgressWidth`.
     private static let progressWidthRange = 4...20
+
+    /// The display-mode picker only drives legacy rendering: while a stored menu-bar layout exists, the
+    /// stored layout wins (`MenuBarLayoutResolution.stored`) and the picked display mode would silently
+    /// do nothing, so the picker is disabled instead of pretending to have an effect.
+    private var isDisplayModePickerEnabled: Bool {
+        Self.layoutEditorEnabled(for: self.settings.menuBarIconStyle)
+            && !self.settings.hasStoredMenuBarLayout
+    }
 
     var body: some View {
         let paceColorSubtitle = L(
@@ -81,7 +97,7 @@ struct MenuBarPane: View {
                     optionLabel: { mode in
                         Text(mode.label)
                     })
-                    .disabled(!Self.layoutEditorEnabled(for: self.settings.menuBarIconStyle))
+                    .disabled(!self.isDisplayModePickerEnabled)
 
                 Toggle(isOn: self.$settings.menuBarHighContrastOnInactiveDisplays) {
                     SettingsRowLabel(
@@ -353,6 +369,8 @@ struct MenuBarPane: View {
 
     /// Live preview of the composed progress line, mirroring the status item's rendering inputs
     /// (`StatusItemController.menuBarDisplayText`), including the shared "show used" quota semantics.
+    /// The preview renders against `progressPreviewNow` rather than the current date so the fixed
+    /// fixtures stay ahead of it and the countdown never silently disappears.
     private var progressPreviewText: String {
         let options = MenuBarProgressTextOptions(
             width: self.progressWidth,
@@ -360,7 +378,10 @@ struct MenuBarPane: View {
             companion: self.settings.menuBarProgressCompanion,
             showUsed: self.settings.usageBarsShowUsed,
             weeklyWindow: self.settings.menuBarProgressShowsWeekly ? Self.progressPreviewWeekly : nil)
-        return MenuBarProgressText.text(session: Self.progressPreviewSession, options: options) ?? ""
+        return MenuBarProgressText.text(
+            session: Self.progressPreviewSession,
+            options: options,
+            now: Self.progressPreviewNow) ?? ""
     }
 
     private func stackedRowProviderPicker(

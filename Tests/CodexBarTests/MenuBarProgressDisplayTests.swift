@@ -156,8 +156,10 @@ struct MenuBarProgressDisplayTests {
             percentWindow: window,
             showUsed: false,
             estimated: true) == "~74%")
-        // The bar text carries no estimate marker today: the renderer conveys "~" through the accessibility
-        // label, and a bar-level prefix is a deferred follow-up. This pins the current contract.
+        // Bar mode carries no estimate marker today — not even through an accessibility label, which the
+        // legacy brand-percent path never sets. Only the percent fallback inside the branch still owns a
+        // "~" (via `percentText`); a bar-level marker remains a deferred follow-up. This pins the
+        // contract as it is.
         #expect(MenuBarDisplayText.displayText(
             mode: .progressBar,
             percentWindow: window,
