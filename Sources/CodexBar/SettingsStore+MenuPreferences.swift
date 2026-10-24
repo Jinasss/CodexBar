@@ -206,6 +206,30 @@ extension SettingsStore {
         set { self.usageBarsShowUsed = newValue == .used }
     }
 
+    /// Glyph pair drawn for the menu bar progress bar display mode.
+    var menuBarProgressGlyphs: MenuBarProgressGlyphSet {
+        get { MenuBarProgressGlyphSet(rawValue: self.menuBarProgressGlyphsRaw) ?? .blocks }
+        set { self.menuBarProgressGlyphsRaw = newValue.rawValue }
+    }
+
+    /// Number of cells in each progress bar lane, clamped to 4...20 on write.
+    var menuBarProgressWidth: Int {
+        get { self.menuBarProgressWidthStorage }
+        set { self.menuBarProgressWidthStorage = max(4, min(20, newValue)) }
+    }
+
+    /// Information appended after the progress bar lanes.
+    var menuBarProgressCompanion: MenuBarProgressCompanion {
+        get { MenuBarProgressCompanion(rawValue: self.menuBarProgressCompanionRaw) ?? .percent }
+        set { self.menuBarProgressCompanionRaw = newValue.rawValue }
+    }
+
+    /// Whether the progress bar also draws the combined weekly quota lane.
+    var menuBarProgressShowsWeekly: Bool {
+        get { self.menuBarProgressShowsWeeklyStorage }
+        set { self.menuBarProgressShowsWeeklyStorage = newValue }
+    }
+
     var resetTimesOption: ResetTimesOption {
         get { self.resetTimesShowAbsolute ? .clock : .countdown }
         set { self.resetTimesShowAbsolute = newValue == .clock }

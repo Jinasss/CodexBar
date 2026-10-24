@@ -853,10 +853,23 @@ extension StatusItemController {
         // session lane is missing (or no combined lanes exist), fall back to the display window so the
         // bar keeps rendering instead of collapsing the status item to an icon.
         let progressSessionWindow: RateWindow? = combinedLanes?.session ?? displayPercentWindow
+        // Bar shape comes from settings and only applies in progress-bar mode; quota semantics
+        // (showUsed, the weekly lane) stay with the displayText parameters below.
+        let progressOptions: MenuBarProgressTextOptions? = if mode == .progressBar {
+            MenuBarProgressTextOptions(
+                width: self.settings.menuBarProgressWidth,
+                glyphs: self.settings.menuBarProgressGlyphs,
+                companion: self.settings.menuBarProgressCompanion)
+        } else {
+            nil
+        }
         return MenuBarDisplayText.displayText(
             mode: mode,
             percentWindow: mode == .progressBar ? progressSessionWindow : displayPercentWindow,
-            weeklyWindow: mode == .progressBar ? combinedLanes?.weekly : nil,
+            weeklyWindow: mode == .progressBar
+                ? (self.settings.menuBarProgressShowsWeekly ? combinedLanes?.weekly : nil)
+                : nil,
+            progressOptions: progressOptions,
             pace: pace,
             paceReservePositive: self.settings.menuBarPaceReservePositive,
             showUsed: self.settings.usageBarsShowUsed,
