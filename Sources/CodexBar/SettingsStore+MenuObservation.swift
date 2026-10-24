@@ -38,6 +38,10 @@ extension SettingsStore {
         _ = self.menuBarHighContrastOnInactiveDisplays
         _ = self.unifiedIconSource
         _ = self.menuBarDisplayMode
+        _ = self.menuBarProgressGlyphs
+        _ = self.menuBarProgressWidth
+        _ = self.menuBarProgressCompanion
+        _ = self.menuBarProgressShowsWeekly
         _ = self.menuBarShowsResetTimeWhenExhausted
         _ = self.kiroMenuBarDisplayMode
         _ = self.historicalTrackingEnabled
