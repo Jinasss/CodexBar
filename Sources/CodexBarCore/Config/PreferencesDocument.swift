@@ -26,7 +26,7 @@ public struct PreferencesDocument: Codable, Sendable {
         "confettiOnWeeklyLimitResetsEnabled", "limitResetNotificationsEnabled", "menuBarShowsHighestUsage",
         "showOptionalCreditsAndExtraUsage", "providerChangelogLinksEnabled", "providersSortedAlphabetically",
         "refreshAllProvidersOnMenuOpen", "mergeIcons", "mergeIconsStacked", "switcherShowsIcons",
-        "menuBarColorByProvider",
+        "menuBarColorByProvider", "menuBarProgressShowsWeekly",
     ])
     private static let stringChoices: [String: [String]] = [
         "refreshFrequency": [
@@ -43,14 +43,16 @@ public struct PreferencesDocument: Codable, Sendable {
         "workdayTickAppearance": ["hidden", "subtle", "highContrast"],
         "mergedOverviewLayout": ["detailed", "compact"],
         "unifiedIconSource": ["currentSelection", "highestUsage", "frontmostApp"],
+        "menuBarProgressGlyphs": ["blocks", "circles", "squares", "thin"],
+        "menuBarProgressCompanion": ["none", "percent", "time", "percentAndTime"],
     ]
     private static let thresholdKeys = Set([
         "quotaWarningThresholds", "quotaWarningSessionThresholds", "quotaWarningWeeklyThresholds",
     ])
     private static var keys: Set<String> {
         self.boolKeys.union(self.stringChoices.keys).union(self.thresholdKeys).union([
-            "weeklyProgressWorkDays", "preferredCurrencyCode", "mergedOverviewSelectedProviders",
-            "switcherShortcuts",
+            "weeklyProgressWorkDays", "menuBarProgressWidth", "preferredCurrencyCode",
+            "mergedOverviewSelectedProviders", "switcherShortcuts",
         ])
     }
 
@@ -112,6 +114,8 @@ public struct PreferencesDocument: Codable, Sendable {
         // Optional fields omitted by the encoder still belong to the sync projection.
         let keys = Set(values.keys).union([
             "weeklyProgressWorkDays", "paceVisible", "workdayTickAppearance", "unifiedIconSource",
+            "menuBarProgressGlyphs", "menuBarProgressWidth", "menuBarProgressCompanion",
+            "menuBarProgressShowsWeekly",
         ])
         values.merge(self.importingPreferences.filter { keys.contains($0.key) }) { _, new in new }
         return try JSONDecoder().decode(SyncedPreferences.self, from: JSONEncoder().encode(values))
@@ -140,7 +144,9 @@ public struct PreferencesDocument: Codable, Sendable {
                     ??
                     (key == "preferredCurrencyCode" &&
                         (raw == "auto" || (raw.count == 3 && raw.utf8.allSatisfy { (65...90).contains($0) })))
-            case let .integer(number): valid = key == "weeklyProgressWorkDays" && (1...7).contains(number)
+            case let .integer(number):
+                valid = (key == "weeklyProgressWorkDays" && (1...7).contains(number))
+                    || (key == "menuBarProgressWidth" && (4...20).contains(number))
             case .null: valid = key == "weeklyProgressWorkDays"
             case let .array(values):
                 if Self.thresholdKeys.contains(key) {

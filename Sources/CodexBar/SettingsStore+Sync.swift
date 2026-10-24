@@ -44,6 +44,10 @@ extension SettingsStore {
             paceVisible: self.paceVisible,
             weeklyProgressWorkDays: self.weeklyProgressWorkDays,
             workdayTickAppearance: self.workdayTickAppearance.rawValue,
+            menuBarProgressGlyphs: self.menuBarProgressGlyphs.rawValue,
+            menuBarProgressWidth: self.menuBarProgressWidth,
+            menuBarProgressCompanion: self.menuBarProgressCompanion.rawValue,
+            menuBarProgressShowsWeekly: self.menuBarProgressShowsWeekly,
             usageBarsShowUsed: self.usageBarsShowUsed,
             resetTimesShowAbsolute: self.resetTimesShowAbsolute,
             costUsageEnabled: self.costUsageEnabled,
@@ -84,6 +88,22 @@ extension SettingsStore {
            let appearance = WorkdayTickAppearance(rawValue: rawAppearance)
         {
             self.workdayTickAppearance = appearance
+        }
+        if let rawGlyphs = preferences.menuBarProgressGlyphs,
+           let glyphs = MenuBarProgressGlyphSet(rawValue: rawGlyphs)
+        {
+            self.menuBarProgressGlyphs = glyphs
+        }
+        if let width = preferences.menuBarProgressWidth {
+            self.menuBarProgressWidth = width
+        }
+        if let rawCompanion = preferences.menuBarProgressCompanion,
+           let companion = MenuBarProgressCompanion(rawValue: rawCompanion)
+        {
+            self.menuBarProgressCompanion = companion
+        }
+        if let showsWeekly = preferences.menuBarProgressShowsWeekly {
+            self.menuBarProgressShowsWeekly = showsWeekly
         }
         self.usageBarsShowUsed = preferences.usageBarsShowUsed
         self.resetTimesShowAbsolute = preferences.resetTimesShowAbsolute

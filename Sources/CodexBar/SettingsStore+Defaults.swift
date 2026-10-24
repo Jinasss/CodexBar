@@ -499,41 +499,6 @@ extension SettingsStore {
         }
     }
 
-    // Menu bar progress bar settings. Underlying raw storage mirrors the direct-UserDefaults pattern of
-    // `mergedOverviewSelectionEditedActiveProvidersRaw` above (static key constants plus a
-    // `userDefaults.string/object(forKey:)` read with a fallback default), so the typed accessors in
-    // SettingsStore+MenuPreferences.swift stay the only consumers of these raw values.
-    static let menuBarProgressGlyphsDefaultsKey = "menuBarProgressGlyphs"
-    static let menuBarProgressWidthDefaultsKey = "menuBarProgressWidth"
-    static let menuBarProgressCompanionDefaultsKey = "menuBarProgressCompanion"
-    static let menuBarProgressShowsWeeklyDefaultsKey = "menuBarProgressShowsWeekly"
-
-    var menuBarProgressGlyphsRaw: String {
-        get {
-            self.userDefaults.string(forKey: Self.menuBarProgressGlyphsDefaultsKey)
-                ?? MenuBarProgressGlyphSet.blocks.rawValue
-        }
-        set { self.userDefaults.set(newValue, forKey: Self.menuBarProgressGlyphsDefaultsKey) }
-    }
-
-    var menuBarProgressWidthStorage: Int {
-        get { self.userDefaults.object(forKey: Self.menuBarProgressWidthDefaultsKey) as? Int ?? 10 }
-        set { self.userDefaults.set(newValue, forKey: Self.menuBarProgressWidthDefaultsKey) }
-    }
-
-    var menuBarProgressCompanionRaw: String {
-        get {
-            self.userDefaults.string(forKey: Self.menuBarProgressCompanionDefaultsKey)
-                ?? MenuBarProgressCompanion.percent.rawValue
-        }
-        set { self.userDefaults.set(newValue, forKey: Self.menuBarProgressCompanionDefaultsKey) }
-    }
-
-    var menuBarProgressShowsWeeklyStorage: Bool {
-        get { self.userDefaults.object(forKey: Self.menuBarProgressShowsWeeklyDefaultsKey) as? Bool ?? true }
-        set { self.userDefaults.set(newValue, forKey: Self.menuBarProgressShowsWeeklyDefaultsKey) }
-    }
-
     private func persistMenuBarLayout(_ layout: MenuBarLayout) {
         guard let blobs = try? MenuBarLayoutPersistence.encoded(layout) else { return }
         self.userDefaults.set(blobs.current, forKey: MenuBarLayoutUserDefaultsKey.layoutCurrent)

@@ -603,6 +603,13 @@ extension SettingsStore {
             workdayTickAppearanceRaw: userDefaults.string(forKey: "workdayTickAppearance")
                 ?? WorkdayTickAppearance.subtle.rawValue,
             usageBarsShowUsed: userDefaults.object(forKey: "usageBarsShowUsed") as? Bool ?? false,
+            menuBarProgressGlyphs: userDefaults.string(forKey: "menuBarProgressGlyphs")
+                ?? MenuBarProgressGlyphSet.blocks.rawValue,
+            menuBarProgressWidth: userDefaults.object(forKey: "menuBarProgressWidth") as? Int ?? 10,
+            menuBarProgressCompanion: userDefaults.string(forKey: "menuBarProgressCompanion")
+                ?? MenuBarProgressCompanion.percent.rawValue,
+            menuBarProgressShowsWeekly: userDefaults.object(forKey: "menuBarProgressShowsWeekly")
+                as? Bool ?? true,
             resetTimesShowAbsolute: userDefaults.object(forKey: "resetTimesShowAbsolute") as? Bool ?? false,
             providerChangelogLinksEnabled: userDefaults.object(
                 forKey: "providerChangelogLinksEnabled") as? Bool ?? false,

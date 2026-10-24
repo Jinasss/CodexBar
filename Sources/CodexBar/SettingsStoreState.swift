@@ -31,6 +31,10 @@ struct SettingsDefaultsState {
     var weeklyProgressWorkDays: Int?
     var workdayTickAppearanceRaw: String
     var usageBarsShowUsed: Bool
+    var menuBarProgressGlyphs: String
+    var menuBarProgressWidth: Int
+    var menuBarProgressCompanion: String
+    var menuBarProgressShowsWeekly: Bool
     var resetTimesShowAbsolute: Bool
     var providerChangelogLinksEnabled: Bool
     var highlightMenuCardsOnHover: Bool
