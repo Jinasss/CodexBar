@@ -113,6 +113,7 @@ enum MenuBarDisplayText {
     static func displayText(
         mode: MenuBarDisplayMode,
         percentWindow: RateWindow?,
+        weeklyWindow: RateWindow? = nil,
         pace: UsagePace? = nil,
         paceReservePositive: Bool = false,
         showUsed: Bool,
@@ -157,6 +158,20 @@ enum MenuBarDisplayText {
             guard let percentWindow else { return nil }
             return self.resetTimeText(window: percentWindow, style: resetTimeDisplayStyle, now: now)
                 ?? self.percentText(window: percentWindow, showUsed: showUsed, estimated: estimated)
+        case .progressBar:
+            // Core renders the bar shape itself; fall back to percent text when no lane is available so
+            // the status item never collapses to an icon-only state.
+            if let progressText = MenuBarProgressText.text(
+                session: percentWindow,
+                options: MenuBarProgressTextOptions(
+                    showUsed: showUsed,
+                    weeklyWindow: weeklyWindow),
+                resetTimeCountdown: resetTimeDisplayStyle == .countdown,
+                now: now)
+            {
+                return progressText
+            }
+            return self.percentText(window: percentWindow, showUsed: showUsed, estimated: estimated)
         }
     }
 

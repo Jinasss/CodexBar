@@ -533,6 +533,9 @@ struct MenuBarCountdownRefreshTests {
                 // Pace/both surface the exhausted weekly lane, not the session lane that wins the 100/100
                 // icon-metric tie.
                 #expect(dates == [weeklyReset])
+            case .progressBar:
+                // Progress bars render the same single display lane as pace/both.
+                #expect(dates == [weeklyReset])
             case .resetTime:
                 Issue.record("reset-time mode is not an argument for this smart-reset test")
             }

@@ -998,7 +998,9 @@ extension MenuBarLayout {
             return MenuBarLayout(lines: [[icon, .balance]])
         }
         switch displayMode {
-        case .percent:
+        // Progress bars render through the display-text path, so legacy layout migration keeps the
+        // same percent-shaped fallback (a stored layout never exists for the new mode yet).
+        case .percent, .progressBar:
             if metricPreference == .primaryAndSecondary {
                 return MenuBarLayout(lines: [[
                     icon,

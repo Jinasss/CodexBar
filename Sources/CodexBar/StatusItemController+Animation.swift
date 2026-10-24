@@ -792,7 +792,8 @@ extension StatusItemController {
 
         let pace: UsagePace?
         switch mode {
-        case .percent:
+        // Progress bars pair the same single display lane with Core-rendered bars, so they carry no pace.
+        case .percent, .progressBar:
             pace = nil
         case .pace, .both:
             let paceWindow = self.menuBarPaceWindow(
@@ -1040,8 +1041,8 @@ extension StatusItemController {
     /// Reset dates for every lane whose menu-bar text is currently rendered as a reset time, so the
     /// countdown scheduler can refresh each of them. Reset-time mode drives a single window. The smart
     /// "reset time when exhausted" option can surface BOTH combined session/weekly lanes in percent mode,
-    /// while pace/both render the one lane chosen by `combinedDisplayPercentWindow` — mirror that presentation
-    /// here rather than scheduling whichever lane happened to drive the icon.
+    /// while pace/both/progress-bar render the one lane chosen by `combinedDisplayPercentWindow` — mirror
+    /// that presentation here rather than scheduling whichever lane happened to drive the icon.
     func menuBarDisplayedResetDates(for provider: UsageProvider, now: Date) -> [Date] {
         let snapshot = self.menuBarUsageSource(for: provider).snapshot
         let layoutResolution = self.renderedMenuBarLayoutResolution(for: provider)
@@ -1069,9 +1070,10 @@ extension StatusItemController {
                     .compactMap(\.self)
                     .filter { $0.remainingPercent <= 0 }
                     .compactMap(\.resetsAt)
-            case .pace, .both:
-                // Pace/both render one usage lane alongside the weekly pace. Use that exact lane rather
-                // than `menuBarMetricWindow`, whose tie-breaking can select the other exhausted window.
+            case .pace, .both, .progressBar:
+                // Pace/both render one usage lane alongside the weekly pace, and progress bars render that
+                // same single lane. Use that exact lane rather than `menuBarMetricWindow`, whose
+                // tie-breaking can select the other exhausted window.
                 let window = Self.combinedDisplayPercentWindow(
                     lanes: lanes,
                     fallback: self.menuBarMetricWindow(for: provider, snapshot: snapshot, now: now))
