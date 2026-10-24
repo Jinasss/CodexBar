@@ -254,4 +254,40 @@ struct MenuBarProgressTextTests {
         let withPercent = MenuBarProgressTextOptions(width: 0, weeklyWindow: Self.makeWeeklyWindow())
         #expect(MenuBarProgressText.text(session: session, options: withPercent) == "74%")
     }
+
+    @Test
+    func `an exhausted session lane keeps its entirely empty bar`() {
+        let exhausted = RateWindow(usedPercent: 100, windowMinutes: 300, resetsAt: nil, resetDescription: nil)
+        let text = MenuBarProgressText.text(session: exhausted, options: MenuBarProgressTextOptions())
+        #expect(text == "5h ░░░░░░░░░░ · 0%")
+    }
+
+    @Test
+    func `an overdrawn session clamps the remaining lane to an empty bar`() {
+        let overdrawn = RateWindow(usedPercent: 120, windowMinutes: 300, resetsAt: nil, resetDescription: nil)
+        let text = MenuBarProgressText.text(session: overdrawn, options: MenuBarProgressTextOptions())
+        #expect(text == "5h ░░░░░░░░░░ · 0%")
+    }
+
+    @Test
+    func `show used renders an overdrawn session as a full bar with the clamped percent`() {
+        let overdrawn = RateWindow(usedPercent: 120, windowMinutes: 300, resetsAt: nil, resetDescription: nil)
+        let text = MenuBarProgressText.text(session: overdrawn, options: MenuBarProgressTextOptions(showUsed: true))
+        #expect(text == "5h ▓▓▓▓▓▓▓▓▓▓ · 100%")
+    }
+
+    @Test
+    func `a one cell width renders one cell in each lane`() {
+        let exhausted = RateWindow(usedPercent: 100, windowMinutes: 300, resetsAt: nil, resetDescription: nil)
+        let unused = RateWindow(usedPercent: 0, windowMinutes: 10080, resetsAt: nil, resetDescription: nil)
+        let text = MenuBarProgressText.text(
+            session: exhausted, options: MenuBarProgressTextOptions(width: 1, weeklyWindow: unused))
+        #expect(text == "5h ░ · W ▓ · 0%")
+
+        let halfUsed = RateWindow(usedPercent: 50, windowMinutes: 300, resetsAt: nil, resetDescription: nil)
+        let mostlyUsed = RateWindow(usedPercent: 75, windowMinutes: 10080, resetsAt: nil, resetDescription: nil)
+        let rounded = MenuBarProgressText.text(
+            session: halfUsed, options: MenuBarProgressTextOptions(width: 1, weeklyWindow: mostlyUsed))
+        #expect(rounded == "5h ▓ · W ░ · 50%")
+    }
 }
