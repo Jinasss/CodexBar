@@ -847,9 +847,16 @@ extension StatusItemController {
         } else {
             percentWindow
         }
+        // Progress bars render the session lane itself rather than `displayPercentWindow`: the display
+        // window is the tie-broken single lane, while progress-bar mode draws both lanes side by side,
+        // so each bar keeps its own window instead of the one lane that won the tie-break. When the
+        // session lane is missing (or no combined lanes exist), fall back to the display window so the
+        // bar keeps rendering instead of collapsing the status item to an icon.
+        let progressSessionWindow: RateWindow? = combinedLanes?.session ?? displayPercentWindow
         return MenuBarDisplayText.displayText(
             mode: mode,
-            percentWindow: displayPercentWindow,
+            percentWindow: mode == .progressBar ? progressSessionWindow : displayPercentWindow,
+            weeklyWindow: mode == .progressBar ? combinedLanes?.weekly : nil,
             pace: pace,
             paceReservePositive: self.settings.menuBarPaceReservePositive,
             showUsed: self.settings.usageBarsShowUsed,
